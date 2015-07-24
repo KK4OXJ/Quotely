@@ -1,0 +1,107 @@
+// Place all the styles related to the Quotes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the quotes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin centerer() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+body {
+  background-color: #F6F6F6;
+}
+
+.quote {
+  box-sizing: border-box;
+  width: 335px;
+  background-color: #2890ED;
+  color: white;
+  padding: 40px;
+  padding-bottom: 20px;
+  margin: 40px auto;
+  overflow: hidden;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+}
+
+.quote-content {
+  white-space: pre-line;
+}
+
+.current-quote {
+  @extend .quote;
+  @include centerer;
+  
+  margin: 0;
+}
+
+form {
+  @include centerer;
+}
+
+.quote-mark {
+  position: absolute;
+  margin-left: -30px;
+  margin-top: -40px;
+  font-size: 120px;
+  font-family: Liberation Serif;
+  z-index: 0;
+  color: rgba(255, 255, 255, 0.35);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+textarea {
+  width: 340px;
+  max-height: 200px;
+  height: 30px;
+  resize: vertical;
+}
+
+.link-back, .link-back:hover {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: black;
+  font-size: 24px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+small {
+  font-size: 10px;
+  font-style: italic;
+}
+
+a, .btn {
+  color: white;
+  text-decoration: none;
+  
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+.new-quote {
+  box-sizing: border-box;
+  display: block;
+  width: 335px;
+  padding: 20px 40px;
+  margin: 20px auto 40px;
+  text-align: center;
+  
+  &:nth-child(1) {
+    margin: 40px auto 0;
+  }
+}

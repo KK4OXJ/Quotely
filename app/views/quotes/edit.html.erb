@@ -1,0 +1,11 @@
+<%= link_to '〈', quote_path(@quote), :class => 'link-back' %>
+
+<div class="form-container">
+  <%= form_for(@quote) do |f| %>
+    <%= f.label "Edit your Quote:", :for => 'quote' %>
+    <br>
+    <%= f.text_area :content, :id => 'quote', :autofocus => 'true' %> 
+    <br>
+    <%= f.submit "Submit", :class => 'btn' %> 
+  <% end %>
+</div>

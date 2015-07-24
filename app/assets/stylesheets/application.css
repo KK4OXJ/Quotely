@@ -1,0 +1,60 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  cursor: default;
+}
+
+label {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+}
+
+textarea, input, .btn {
+  padding: 10px;
+  border: 1px solid lightgray;
+  margin: 2px 0;
+  font-family: sans-serif;
+}
+
+textarea:focus, input:focus, .btn:focus {
+  border: 1px solid #39A0ED;
+  box-shadow: 0;
+  outline: none;
+}
+
+.btn {
+  background-color: #13C4A3;
+  border: 1px solid #13C4A3;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.btn:hover, .btn:focus {
+  background-color: #02B392;
+}
+
+header {
+  text-align: right;
+  padding: 10px;
+}

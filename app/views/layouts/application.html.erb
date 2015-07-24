@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quotely</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <% if current_user %>
+    <small class="session-status">You are currently logged in as <%= current_user.email %>. <%= link_to "Log out?", logout_path, method: "delete" %></small>
+    <% else %>
+      <small class="session-status">Psst - Quotely is more fun if you <%= link_to "Log in", 'login' %> or <%= link_to "Sign up", 'signup' %> ;)</small>
+    <% end %>
+  </header>
+
+<%= yield %>
+
+</body>
+</html>
