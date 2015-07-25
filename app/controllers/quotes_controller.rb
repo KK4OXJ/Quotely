@@ -8,7 +8,7 @@ class QuotesController < ApplicationController
 
   def show
     @quote = Quote.find(params[:id])
-    # @user = @quote.user_id
+    @user = @quote.user_id
     @users = User.all
   end
   
