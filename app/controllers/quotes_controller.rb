@@ -1,12 +1,14 @@
 class QuotesController < ApplicationController
 
+  before_action :require_user, only: [:new, :edit, :delete]
+
 	def index
     @quotes = Quote.all
 	end
 
   def show
     @quote = Quote.find(params[:id])
-    @user = @quote.user
+    # @user = @quote.user_id
     @users = User.all
   end
   

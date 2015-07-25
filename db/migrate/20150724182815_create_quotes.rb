@@ -2,8 +2,8 @@ class CreateQuotes < ActiveRecord::Migration
   def change
     create_table :quotes do |t|
     	t.text :content
-      t.string :user_id
-      t.references :user
+
+      add_user_id_to_quotes user_id:integer
 
       t.timestamps
     end
