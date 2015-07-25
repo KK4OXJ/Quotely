@@ -8,7 +8,7 @@ class QuotesController < ApplicationController
 
   def show
     @quote = Quote.find(params[:id])
-    @user = @quote.user_id
+    @user = @quote.user
     @users = User.all
   end
   
@@ -24,7 +24,7 @@ class QuotesController < ApplicationController
   end
   
   def create 
-    @quote = Quote.new(quote_params) 
+    @quote = current_user.quotes.new(quote_params) 
     if @quote.save
       redirect_to quotes_path
     else
