@@ -9,7 +9,7 @@
 <body>
   <header>
     <% if current_user %>
-    <small class="session-status">You are currently logged in as <%= link_to current_user.name, user_path(current_user) %>. <%= link_to "Log out?", logout_path, method: "delete" %></small>
+      <small class="session-status">You are currently logged in as <%= link_to current_user.name, user_path(current_user) %>. <%= link_to "Log out?", logout_path, method: "delete" %></small>
     <% else %>
       <small class="session-status">You can share your own Quotes on Quotely if you <%= link_to "Sign up", 'signup' %> or <%= link_to "Log in", login_path %> :)</small>
     <% end %>

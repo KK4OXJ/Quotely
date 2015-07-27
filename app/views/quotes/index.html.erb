@@ -5,9 +5,7 @@
  <div class="quotes-container">
   <% @quotes.reverse.each do |quote| %>
     <div class="quote">
-      <span class="quote-mark">&ldquo;</span>
       <span class="quote-content"><%= quote.content %></span>
-      <span class="quote-mark">&rdquo;</span>
       <br><br>
       <small>Created at <%= link_to quote.created_at, quote_path(quote) %></small>
     </div>

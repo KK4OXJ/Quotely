@@ -24,6 +24,28 @@ General
 
 .quote-content {
   white-space: pre-line;
+
+  &::before {
+    content: '“';
+  }
+
+  &::after {
+    content: '”';
+  }
+
+  &::before, &::after {
+    position: absolute;
+    margin-left: -30px;
+    margin-top: -40px;
+    font-size: 120px;
+    font-family: 'Liberation Serif';
+    z-index: 0;
+    color: rgba(255, 255, 255, 0.35);
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    pointer-events: none;
+  }
 }
 
 form {
@@ -50,7 +72,7 @@ textarea {
 
 
 /*******************
-Index action
+Index
 *******************/
 
 .quote {
@@ -71,27 +93,13 @@ Index action
 
 
 /*******************
-Show action
+Show
 *******************/
 
 .current-quote {
   @include centerer;
   
   margin: 0;
-}
-
-.quote-mark {
-  position: absolute;
-  margin-left: -30px;
-  margin-top: -40px;
-  font-size: 120px;
-  font-family: 'Liberation Serif';
-  z-index: 0;
-  color: rgba(255, 255, 255, 0.35);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  pointer-events: none;
 }
 
 .submitted-by {
@@ -105,7 +113,7 @@ Show action
 
 
 /*******************
-New action
+New
 *******************/
 
 .new-quote {
