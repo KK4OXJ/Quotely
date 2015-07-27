@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   before_action :require_logged_out, only: [:new]
-  before_action :require_owner, only: [:edit]
-  # before_action :require_admin, only: [:admin]
+  before_action :require_user_owner, only: [:edit, :delete]
+  before_action :require_admin, only: [:admin]
   
   def new
     @user = User.new
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     
     if @user.save
       session[:user_id] = @user.id
-      redirect_to quotes_path
+      redirect_to root_path
     else
       redirect_to '/signup'
     end
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
 
-    redirect_to messages_path
+    redirect_to root_path
   end
   
   private

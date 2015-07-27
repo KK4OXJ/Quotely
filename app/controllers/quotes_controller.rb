@@ -1,7 +1,7 @@
 class QuotesController < ApplicationController
 
   before_action :require_user, only: [:new, :edit, :delete]
-  before_action :require_owner, only: [:edit, :delete]
+  before_action :require_quote_owner, only: [:edit, :delete]
 
 	def index
     @quotes = Quote.all
@@ -17,7 +17,7 @@ class QuotesController < ApplicationController
     quote = Quote.find(params[:id])
     quote.destroy
 
-    redirect_to quotes_path
+    redirect_to root_path
   end
   
   def new
@@ -27,7 +27,7 @@ class QuotesController < ApplicationController
   def create 
     @quote = current_user.quotes.new(quote_params) 
     if @quote.save
-      redirect_to quotes_path
+      redirect_to root_path
     else
       render 'new'
     end

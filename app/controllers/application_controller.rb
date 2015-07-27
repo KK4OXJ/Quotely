@@ -13,19 +13,24 @@ class ApplicationController < ActionController::Base
     redirect_to login_path unless current_user
   end
 
-  def require_owner
+  def require_quote_owner
     @quote = Quote.find(params[:id])
-    @user = User.find(params[:id])
     
-    redirect_to quotes_path unless current_user.email == @quote.user.email || current_user.email == @user.email
+    redirect_to root_path unless current_user == @quote.user || current_user.admin? == true
+  end
+
+  def require_user_owner
+    @user = User.find(params[:id])
+
+    redirect_to root_path unless current_user == @user || current_user.admin? == true
   end
 
   def require_logged_out
-    redirect_to quotes_path unless !current_user
+    redirect_to root_path unless !current_user
   end
 
   def require_admin
-    redirect_to quotes_path unless current_user.admin?
+    redirect_to root_path unless current_user.admin?
   end
 
 end
