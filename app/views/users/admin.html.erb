@@ -1,7 +1,7 @@
 <%= link_to '〈', quotes_path, :class => 'link-back' %>
 
 <div class="container">
-  <input type="text" placeholder="<%= current_user.name %>" id="search-users" class="search-users">
+  <input type="text" placeholder="<%= current_user.name %>" id="search-users" class="search-users" autofocus>
   <div class="users-container">
     <% @users.each do |user| %>
       <div class="user">

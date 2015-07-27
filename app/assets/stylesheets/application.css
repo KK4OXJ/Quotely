@@ -43,10 +43,6 @@ input:not(.btn) {
   height: 20px;
 }
 
-input::placeholder {
-  color: red;
-}
-
 textarea, input, .btn {
   padding: 10px;
   border: 1px solid #D3D3D3;
