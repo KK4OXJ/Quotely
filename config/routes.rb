@@ -3,6 +3,7 @@ Quotely::Application.routes.draw do
   root 'quotes#index'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
+  get 'users/admin' => 'users#admin'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   resources :quotes

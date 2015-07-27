@@ -18,21 +18,38 @@
 }
 
 body {
+  background-color: #F6F6F6;
   font-family: sans-serif;
   cursor: default;
 }
 
 label {
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-       -o-user-select: none;
-          user-select: none;
+  user-select: none;
+}
+
+header {
+  text-align: right;
+  padding: 10px;
+}
+
+small {
+  font-size: 10px;
+  font-style: italic;
+}
+
+input:not(.btn) {
+  width: 200px;
+  height: 20px;
+}
+
+input::placeholder {
+  color: red;
 }
 
 textarea, input, .btn {
   padding: 10px;
-  border: 1px solid lightgray;
+  border: 1px solid #D3D3D3;
   margin: 2px 0;
   font-family: sans-serif;
 }
@@ -54,7 +71,11 @@ textarea:focus, input:focus, .btn:focus {
   background-color: #02B392;
 }
 
-header {
-  text-align: right;
-  padding: 10px;
+a, .btn {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover, a:focus, .btn:hover, .btn:focus {
+  text-decoration: underline;
 }

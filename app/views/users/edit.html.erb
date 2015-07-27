@@ -1,0 +1,15 @@
+<%= link_to '〈', user_path(@user), :class => 'link-back' %>
+
+<div class="form-container">
+  <%= form_for(@user) do |f| %>
+    <%= f.label "Email:", :for => 'email' %>
+    <br>
+    <%= f.text_field :email, :id => 'email', :autofocus => 'true' %> 
+    <br>
+    <%= f.label "Name:", :for => 'name' %>
+    <br>
+    <%= f.text_field :name, :id => 'name' %>
+    <br>
+    <%= f.submit "Submit", :class => 'btn' %> 
+  <% end %>
+</div>

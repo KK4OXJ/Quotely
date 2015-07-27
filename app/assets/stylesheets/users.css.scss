@@ -1,3 +1,65 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/*******************
+Show action
+*******************/
+
+h1 {
+  font-weight: normal;
+  text-align: center;
+  margin-top: 32px;
+}
+
+
+
+/*******************
+New action
+*******************/
+
+.signup-form {
+  width: 100%;
+  text-align: center;
+}
+
+
+
+/*******************
+Admin action
+*******************/
+
+.container {
+  width: 70vw;
+  max-height: 70vh;
+  margin: 10vh auto 0;
+}
+
+.users-container {
+  width: 70vw;
+  max-height: 40vh;
+  border: 1px solid #555;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+.user {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding: 20px;
+
+  a {
+    color: black;
+  }
+
+  small, small a {
+    color: #808080;
+  }
+
+  .user-data {
+    flex-grow: 1;
+  }
+}

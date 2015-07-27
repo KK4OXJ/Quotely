@@ -2,9 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Place all the styles related to the quotes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*******************
+Mixins
+*******************/
 
 @mixin centerer() {
   position: absolute;
@@ -14,52 +16,18 @@
           transform: translate(-50%, -50%);
 }
 
-body {
-  background-color: #F6F6F6;
-}
 
-.quote {
-  box-sizing: border-box;
-  width: 335px;
-  background-color: #2890ED;
-  color: white;
-  padding: 40px;
-  padding-bottom: 20px;
-  margin: 40px auto;
-  overflow: hidden;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-     -moz-hyphens: auto;
-          hyphens: auto;
-}
+
+/*******************
+General
+*******************/
 
 .quote-content {
   white-space: pre-line;
 }
 
-.current-quote {
-  @extend .quote;
-  @include centerer;
-  
-  margin: 0;
-}
-
 form {
   @include centerer;
-}
-
-.quote-mark {
-  position: absolute;
-  margin-left: -30px;
-  margin-top: -40px;
-  font-size: 120px;
-  font-family: Liberation Serif;
-  z-index: 0;
-  color: rgba(255, 255, 255, 0.35);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  pointer-events: none;
 }
 
 textarea {
@@ -79,19 +47,66 @@ textarea {
   text-decoration: none;
 }
 
-small {
-  font-size: 10px;
-  font-style: italic;
+
+
+/*******************
+Index action
+*******************/
+
+.quote {
+  box-sizing: border-box;
+  width: 335px;
+  background-color: #2890ED;
+  color: white;
+  padding: 40px;
+  padding-bottom: 20px;
+  margin: 40px auto;
+  overflow: hidden;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
 }
 
-a, .btn {
-  color: white;
-  text-decoration: none;
+
+
+/*******************
+Show action
+*******************/
+
+.current-quote {
+  @include centerer;
   
-  &:hover, &:focus {
-    text-decoration: underline;
-  }
+  margin: 0;
 }
+
+.quote-mark {
+  position: absolute;
+  margin-left: -30px;
+  margin-top: -40px;
+  font-size: 120px;
+  font-family: 'Liberation Serif';
+  z-index: 0;
+  color: rgba(255, 255, 255, 0.35);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.submitted-by {
+  float: left;
+}
+
+.quote-controls {
+  float: right;
+}
+
+
+
+/*******************
+New action
+*******************/
 
 .new-quote {
   box-sizing: border-box;

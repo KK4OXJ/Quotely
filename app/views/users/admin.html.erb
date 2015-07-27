@@ -1,0 +1,13 @@
+<%= link_to '〈', quotes_path, :class => 'link-back' %>
+
+<div class="container">
+  <input type="text" placeholder="<%= current_user.name %>" id="search-users" class="search-users">
+  <div class="users-container">
+    <% @users.each do |user| %>
+      <div class="user">
+        <span class="user-data"><small class="user-id"><%= user.id %></small> - <span class="user-name"><%= link_to user.name, user_path(user) %></span> <small class="user-email">(<%= link_to user.email, user_path(user) %>)</small></span>
+        <span class="user-controls"><%= link_to "Edit", edit_user_path(user) %> | <%= link_to "Delete", user_path(user), method: :delete, data: {confirm: "Are you absolutely sure you want to delete this user?"} %> | <%= link_to "Make Admin", user_path(user) %></span>
+      </div>
+    <% end %>
+  </div>
+</div>
