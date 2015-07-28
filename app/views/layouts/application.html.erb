@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Quotely</title>
+   <link rel="stylesheet" href="http://openfontlibrary.org/face/bretan-pro"> 
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -15,7 +16,6 @@
     <% end %>
   </header>
 
-<%= yield %>
-
+  <%= yield %>
 </body>
 </html>

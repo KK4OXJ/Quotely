@@ -12,6 +12,16 @@
  *= require_tree .
  */
 
+/******************
+Colors: 
+
+Lighter gray: #F6F6F6 (for the body background)
+Light gray: #D3D3D3 (for input borders)
+Blue: #39A0ED (for inputs on focus)
+Sea green: #13C4A3 (for buttons)
+Dark Sea green: #02B392 (for buttons on focus)
+******************/
+
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +29,7 @@
 
 body {
   background-color: #F6F6F6;
-  font-family: sans-serif;
+  font-family: 'BretanRegular', sans-serif;
   cursor: default;
 }
 
@@ -34,7 +44,7 @@ header {
 }
 
 small {
-  font-size: 10px;
+  font-size: 12px;
   font-style: italic;
 }
 
@@ -74,4 +84,10 @@ a, .btn {
 
 a:hover, a:focus, .btn:hover, .btn:focus {
   text-decoration: underline;
+}
+
+h1 {
+  font-weight: normal;
+  text-align: center;
+  margin-top: 32px;
 }

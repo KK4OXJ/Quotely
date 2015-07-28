@@ -110,7 +110,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  autoprefixer-rails
+  autoprefixer-rails (~> 5.2.1)
   bcrypt-ruby (~> 3.1.2)
   jbuilder (~> 1.2)
   rails (= 4.0.2)
