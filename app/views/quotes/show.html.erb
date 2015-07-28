@@ -4,6 +4,6 @@
   <div class="current-quote quote">
     <span class="quote-content"><%= @quote.content %></span>
     <br><br>
-    <small><span class="submitted-by">Submitted by <%= link_to @user.email, user_path(@user) %></span> <% if quote_owner || admin? %><span class="quote-controls"><%= link_to "Edit", edit_quote_path %> | <%= link_to "Delete", quote_path(@quote), method: :delete, data: {confirm: "Are you sure you want to delete your Quote? You can't undo this."} %></span><% end %></small>
+    <small><span class="submitted-by">Submitted by <%= link_to current_user == @user ? 'You' : @user.email, user_path(@user) %></span> <% if quote_owner || admin? %><span class="quote-controls"><%= link_to "Edit", edit_quote_path %> | <%= link_to "Delete", quote_path(@quote), method: :delete, data: {confirm: "Are you sure you want to delete your Quote? You can't undo this."} %></span><% end %></small>
   </div>
 </div>
