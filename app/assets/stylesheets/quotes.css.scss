@@ -26,7 +26,8 @@ General
   box-sizing: border-box;
   width: 335px;
   color: white;
-  background-color: #2890ED;
+  background-color: #EF3A58;
+  /*background-color: #2890ED;*/
   padding: 40px;
   padding-bottom: 20px;
   margin: 40px auto;
@@ -38,6 +39,7 @@ General
 }
 
 .quote-content {
+  font-size: 20px;
   white-space: pre-line;
 
   &::before {
@@ -53,7 +55,7 @@ General
     margin-left: -30px;
     margin-top: -40px;
     font-size: 120px;
-    font-family: 'Liberation Serif';
+    font-family: 'Liberation Serif', serif;
     z-index: 0;
     color: rgba(255, 255, 255, 0.35);
     -webkit-user-select: none;

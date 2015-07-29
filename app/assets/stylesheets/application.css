@@ -17,7 +17,9 @@ Colors:
 
 Lighter gray: #F6F6F6 (for the body background)
 Light gray: #D3D3D3 (for input borders)
-Blue: #39A0ED (for inputs on focus)
+Blue1: #39A0ED (for inputs on focus)
+Blue2: #2890ED (for quote backgrounds) - outdated
+Red: ##EF3A58 (for quote backgrounds)
 Sea green: #13C4A3 (for buttons)
 Dark Sea green: #02B392 (for buttons on focus)
 ******************/
@@ -55,6 +57,10 @@ small.black, small.black a {
 input:not(.btn) {
   width: 200px;
   height: 20px;
+}
+
+input, textarea {
+  background-color: #F6F6F6;
 }
 
 textarea, input, .btn {
