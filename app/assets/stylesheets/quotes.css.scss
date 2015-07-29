@@ -69,7 +69,8 @@ form {
 
 textarea {
   width: 340px;
-  max-height: 200px;
+  max-height: 120px;
+  min-height: 30px;
   height: 30px;
   resize: vertical;
 }

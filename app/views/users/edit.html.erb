@@ -4,8 +4,8 @@
   <%= form_for(@user) do |f| %>
     <%= f.label "Email:", :for => 'email' %>
     <br>
-    <%= f.text_field :email, :id => 'email', :autofocus => 'true' %> 
-    <br>
+    <%= f.email_field :email, :id => 'email', :autofocus => 'true' %> 
+    <br><br>
     <%= f.label "Name:", :for => 'name' %>
     <br>
     <%= f.text_field :name, :id => 'name' %>

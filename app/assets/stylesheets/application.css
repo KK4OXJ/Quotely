@@ -48,6 +48,10 @@ small {
   font-style: italic;
 }
 
+small.black, small.black a {
+  color: black;
+}
+
 input:not(.btn) {
   width: 200px;
   height: 20px;
