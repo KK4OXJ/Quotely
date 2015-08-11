@@ -1,12 +1,9 @@
 class UsersController < ApplicationController
 
   before_action :require_logged_out, only: [:new]
+  before_action :require_logged_in, only: [:show]
   before_action :require_user_owner, only: [:edit, :delete]
   before_action :require_admin, only: [:admin]
-  
-  def new
-    @user = User.new
-  end
 
   def admin
     @users = User.all
@@ -14,6 +11,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def new
+    @user = User.new
   end
   
   def create

@@ -30,7 +30,7 @@ Dark Sea green: #02B392 (for buttons on focus)
 
 body {
   background-color: #F6F6F6;
-  font-family: 'BretanRegular', sans-serif;
+  font-family: sans-serif;
   cursor: default;
 }
 
@@ -45,12 +45,16 @@ header {
 }
 
 small {
-  font-size: 12px;
+  font-size: 10px;
   font-style: italic;
 }
 
 small.black, small.black a {
   color: black;
+}
+
+.logo {
+  font-family: 'BretanRegular', Georgia, sans-serif;
 }
 
 input:not(.btn) {
