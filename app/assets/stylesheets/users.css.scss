@@ -49,6 +49,10 @@ Admin
   flex-wrap: wrap;
   padding: 20px;
 
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
   a {
     color: black;
   }

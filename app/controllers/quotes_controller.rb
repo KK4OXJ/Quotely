@@ -27,7 +27,7 @@ class QuotesController < ApplicationController
   def create 
     @quote = current_user.quotes.new(quote_params) 
     if @quote.save
-      redirect_to root_path
+      redirect_to quote_path(@quote)
     else
       render 'new'
     end
