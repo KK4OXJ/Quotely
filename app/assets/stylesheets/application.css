@@ -57,6 +57,11 @@ small.black, small.black a {
   font-family: 'BretanRegular', Georgia, sans-serif;
 }
 
+input {
+  border-radius: 0;
+  outline: none;
+}
+
 input:not(.btn) {
   width: 200px;
   height: 20px;
