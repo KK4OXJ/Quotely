@@ -1,5 +1,5 @@
 <% if current_user %>
-  <%= link_to 'New Quote', new_quote_path, :class => 'new-quote btn' %>
+  <%= link_to 'New Quote', new_quote_url, :class => 'new-quote btn' %>
 <% end %>
 
  <div class="quotes-container">
@@ -7,11 +7,11 @@
     <div class="quote">
       <span class="quote-content"><%= quote.content %></span>
       <br><br>
-      <small>Created at <%= link_to quote.created_at, quote_path(quote) %></small>
+      <small>Created at <%= link_to quote.created_at, quote_url(quote) %></small>
     </div>
   <% end %>
 </div>
 
 <% if current_user %>
-  <%= link_to 'New Quote', new_quote_path, :class => 'new-quote btn' %>
+  <%= link_to 'New Quote', new_quote_url, :class => 'new-quote btn' %>
 <% end %>

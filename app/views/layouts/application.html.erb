@@ -5,16 +5,48 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  
+  <style>
+    .overlay {
+      position: fixed;
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      background-color: #13C4A3;
+      opacity: 9999;
+      z-index: 9999;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <% if current_user %>
-      <small class="session-status">You are currently logged in as <%= link_to current_user.name, user_path(current_user) %>.  <% if current_user.admin? %><%= link_to 'Admin', '/users/admin' %> |<% end %> <%= link_to "Log out?", logout_path, method: "delete" %></small>
-    <% else %>
-      <small class="session-status">You can share your own Quotes on Quotely if you <%= link_to "Sign up", 'signup' %> or <%= link_to "Log in", login_path %> :)</small>
-    <% end %>
-  </header>
+  <div id="overlay" class="overlay"></div>
+  <div class="page-wrapper">
+    <header>
+      <% if current_user %>
+        <small class="session-status">You are currently logged in as <%= link_to current_user.name, user_url(current_user) %>.  <% if current_user.admin? %><%= link_to 'Admin', '/users/admin' %> |<% end %> <%= link_to "Log out?", logout_url, method: "delete" %></small>
+      <% else %>
+        <small class="session-status">You can share your own Quotes on Quotely if you <%= link_to "Sign up", 'signup' %> or <%= link_to "Log in", login_url %> :)</small>
+      <% end %>
+    </header>
 
-  <%= yield %>
+    <%= yield %>
+  </div>
+  
+  <script>
+    $('.overlay').delay(500).fadeOut(500);
+    
+    $('a').click(function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      
+      var theLink = $(this);
+      
+      $('.overlay').fadeIn(500);
+      
+      window.setTimeout(function() {
+        window.location.href = theLink.attr("href");
+      }, 500);
+    });
+  </script>
 </body>
 </html>

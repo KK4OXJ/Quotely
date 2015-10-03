@@ -1,13 +1,13 @@
-<%= link_to '〈', root_path, :class => 'link-back' %>
+<%= link_to '〈', root_url, :class => 'link-back' %>
 
-<h1><%= @user.name %>'s Quotes: <% if current_user == @user || current_user.admin? %><small class="black"><%= link_to 'Edit account', edit_user_path %></small><% end %></h1>
+<h1><%= @user.name %>'s Quotes: <% if current_user == @user || current_user.admin? %><small class="black"><%= link_to 'Edit account', edit_user_url %></small><% end %></h1>
 
  <div class="quotes-container">
   <% @user.quotes.reverse.each do |quote| %>
     <div class="quote">
       <span class="quote-content"><%= quote.content %></span>
       <br><br>
-      <small>Created at <%= link_to quote.created_at, quote_path(quote) %></small>
+      <small>Created at <%= link_to quote.created_at, quote_url(quote) %></small>
     </div>
   <% end %>
 </div>
