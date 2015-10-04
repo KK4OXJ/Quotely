@@ -3,9 +3,9 @@ class QuotesController < ApplicationController
   before_action :require_logged_in, only: [:new, :edit, :delete]
   before_action :require_quote_owner, only: [:edit, :delete]
 
-	def index
+  def index
     @quotes = Quote.all
-	end
+  end
 
   def show
     @quote = Quote.find(params[:id])
