@@ -4,7 +4,6 @@ Quotely::Application.routes.draw do
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   get 'users/admin' => 'users#admin'
-#  get 'quotes/:content/:id' => 'quotes#show'
   get 'logout' => 'sessions#destroy'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'

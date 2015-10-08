@@ -101,8 +101,18 @@ textarea:focus, input:focus, .btn:focus {
   cursor: pointer;
 }
 
-.btn:hover, .btn:focus {
+.btn:hover, .btn:focus, .btn:active {
   background-color: #02B392;
+}
+
+.warning.btn {
+  background-color: #FF4855;
+  border-color: #FF4855;
+}
+
+.btn.warning:hover, .btn.warning:focus, .btn.warning:active {
+  background-color: #EF3845;
+  border-color: #EF3845;
 }
 
 a, .btn {

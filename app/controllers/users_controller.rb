@@ -45,6 +45,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    session[:user_id] = nil
 
     redirect_to root_path
   end
@@ -53,5 +54,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:email, :password, :name)
     end
-  
 end
