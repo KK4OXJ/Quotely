@@ -12,37 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require turbolinks
-// require_tree .
+//// require turbolinks
+//// require_tree .
 //= require users.js
 
 $(document).ready(function() {
-  $('.overlay').delay(500).fadeOut(500);
-
-  $('a').not('[data-method="delete"]').click(function(event) {
-    event.preventDefault();
-
-    var theLink = $(this);
-
-    $('.overlay').fadeIn(500);
-
-    window.setTimeout(function() {
-      window.location.href = theLink.attr("href");
-    }, 500);
+  $('.flash-msg').click(function() {
+    $(this).fadeOut();
   });
-
-  function submitForm(event) {
-    if (event.keyCode == 13 || !event) {
-      event.preventDefault();
-
-      $('.overlay').fadeIn(500);
-
-      setTimeout(function() {
-        $('form').submit();
-      }, 500);
-    }
-  }
-
-  $('input[type="submit"]').click(submitForm);
-  $(document).keypress(submitForm);
 });

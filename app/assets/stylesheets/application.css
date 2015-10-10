@@ -41,7 +41,7 @@ label {
 
 header {
   text-align: right;
-  padding: 10px;
+  padding: 10px 10px 0 0;
 }
 
 .link-back, .link-back:hover, .link-back:active, .link-back:focus {
@@ -61,6 +61,26 @@ small {
 
 small.black, small.black a {
   color: #333;
+}
+
+.flash-msg-container {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  padding:10px;
+}
+
+.flash-msg {
+  display: inline-block;
+  color: white;
+  background-color: #FF4855;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.flash-msg:hover, .flash-msg:focus {
+  background-color: #EF3845;
 }
 
 .logo {

@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-
+  
   before_action :require_logged_in, only: [:new, :edit, :delete]
   before_action :require_quote_owner, only: [:edit, :delete]
 
@@ -17,7 +17,7 @@ class QuotesController < ApplicationController
     quote = Quote.find(params[:id])
     quote.destroy
 
-    redirect_to root_path
+    redirect_to root_url, :notice => 'Your Quote was deleted!'
   end
   
   def new
@@ -26,8 +26,12 @@ class QuotesController < ApplicationController
   
   def create 
     @quote = current_user.quotes.new(quote_params) 
+    @user = current_user
+    @users = User.all
+    
     if @quote.save
-      redirect_to quote_path(@quote)
+      UserNotifier.send_new_quote_email(@users).deliver
+      redirect_to quote_url(@quote), :notice => 'Your Quote was created!'
     else
       render 'new'
     end
@@ -42,7 +46,7 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
     
     if @quote.update_attributes(quote_params)
-      redirect_to(:action => 'show', :id => @quote.id)
+      redirect_to quote_url(@quote), :notice => 'Quote edited successfully!'
     else
       render 'edit'
     end
