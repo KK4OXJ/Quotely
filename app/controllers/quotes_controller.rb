@@ -30,7 +30,7 @@ class QuotesController < ApplicationController
     @users = User.all
     
     if @quote.save
-      UserNotifier.send_new_quote_email(@users).deliver
+      UserNotifier.send_new_quote_emails(@users).deliver
       redirect_to quote_url(@quote), :notice => 'Your Quote was created!'
     else
       render 'new'
