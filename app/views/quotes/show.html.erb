@@ -6,7 +6,11 @@
     <br><br>
     <small>
       <span class="submitted-by">
-        Submitted by <%= link_to current_user == @user ? 'You' : @user.name, user_url(@user) %>
+        <% if current_user %>
+          Submitted by <%= link_to current_user == @user ? 'You' : @user.name, user_url(@user) %>
+        <% else %>
+          Submitted by <%= link_to @user.name, user_url(@user) %>
+        <% end %>
       </span> 
       <% if (((current_user) && (quote_owner)) || ((current_user) && (admin?))) %>
         <span class="quote-controls">

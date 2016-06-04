@@ -5,8 +5,22 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  
+  <style>
+     .overlay {
+       position: fixed;
+       display: block;
+       width: 100vw;
+       height: 100vh;
+       background-color: #13C4A3;
+       opacity: 9999;
+       z-index: 9999;
+     }
+  </style>
 </head>
 <body>
+  <div id="overlay" class="overlay"></div>
+
   <header>
     <% if current_user %>
       <small class="session-status">You are currently logged in as <%= link_to current_user.name, user_url(current_user) %>.  <% if current_user.admin? %><%= link_to 'Admin', users_admin_url %> |<% end %> <%= link_to "Log out?", logout_url, method: "delete" %></small>
